@@ -1,0 +1,12 @@
+frontend http-in
+  default_backend server_backend
+  bind *:80
+
+backend server_backend
+  balance roundrobin
+<% begin_count = 0 -%>
+<% end_count = node['web_docker_host']['webcontainer_count'] -%>
+<% while begin_count < end_count do -%>
+  server container-<%= begin_count %> <%= node['cloud']['public_ipv4'] %>:800<%= begin_count %> check
+  <% begin_count += 1 -%>
+<% end -%>

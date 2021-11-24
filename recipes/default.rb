@@ -15,4 +15,12 @@ template '/home/ubuntu/webcontainer/index.html' do
   action :create
 end
 
+directory '/home/ubuntu/loadbalancer' do
+  action :create
+end
+
+template '/home/ubuntu/loadbalancer/haproxy.cfg' do
+  source 'haproxy.cfg.erb'
+end
+
 include_recipe 'web_docker_host::docker_setup'

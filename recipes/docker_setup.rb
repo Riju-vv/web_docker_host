@@ -36,3 +36,12 @@ while begin_count < end_count
   end
   begin_count += 1
 end
+
+docker_container 'haproxy_internal' do
+  repo 'haproxy'
+  volumes ['/home/ubuntu/loadbalancer/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg']
+  port '80:80'
+  action :run
+  read_timeout 60
+  write_timeout 60
+end
