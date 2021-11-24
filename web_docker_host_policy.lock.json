@@ -1,0 +1,72 @@
+{
+  "revision_id": "e622d9fa0c0293426ef8c50565dfe2cba1b5e3d108ff91361a2fa017f5b22854",
+  "name": "web_docker_host",
+  "run_list": [
+    "recipe[web_docker_host::default]"
+  ],
+  "included_policy_locks": [
+
+  ],
+  "cookbook_locks": {
+    "docker": {
+      "version": "7.7.0",
+      "identifier": "92b1f2d7956d1e2b98474380795df3e7545f3758",
+      "dotted_decimal_identifier": "41291003156851998.12270855841151325.268174878521176",
+      "cache_key": "docker-7.7.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/7.7.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/docker/versions/7.7.0/download",
+        "version": "7.7.0"
+      }
+    },
+    "web_docker_host": {
+      "version": "0.1.0",
+      "identifier": "e08ba792c18454ae1b27ed6772229213a98c34c8",
+      "dotted_decimal_identifier": "63203946621142100.49006504248308258.160613146571976",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": "0656aeef38625022deaec0d80f9e0954c1d6934c",
+        "working_tree_clean": false,
+        "published": true,
+        "synchronized_remote_branches": [
+          "origin/main"
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "docker",
+        "= 7.7.0"
+      ],
+      [
+        "web_docker_host",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "docker (7.7.0)": [
+
+      ],
+      "web_docker_host (0.1.0)": [
+        [
+          "docker",
+          "= 7.7.0"
+        ]
+      ]
+    }
+  }
+}
