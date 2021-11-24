@@ -1,1 +1,1 @@
-default['web_docker_host']['webcontainer_count'] = 4
+default['web_docker_host']['webcontainer_count'] = 3
